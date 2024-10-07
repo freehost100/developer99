@@ -23,9 +23,10 @@ html, body {
       width: 100%;
       max-width: 400px;
       margin: 0 auto;
+      
       }
 body {
-    margin: 0px;
+    margin: 0 outo;
     background: ,#fff;
     background-size: 100%;
     color: #fff;
@@ -38,7 +39,7 @@ body {
     left: 0;
     right: 0;
     margin: 0px auto;
-    margin-bottom: 110vh;
+    margin-bottom: 120vh;
 }
 
 .lonte{
@@ -276,8 +277,7 @@ padding-top: 15px
     }
     
     .hua{
-        max-width: 320px;
-        bottom:120px;               
+        max-width: 320px;         
         position: absolute;
         border:5px solid #fff;
         padding:15px;
@@ -285,10 +285,11 @@ padding-top: 15px
         border-radius:18px; 
         background: #ffffffe6;
         background-size:100%; 
-        height: 410px; 
+        height: 445px; 
         left: 0;
         right: 0;
-        margin: 0px auto;
+        margin: 0px auto;      
+        bottom: 20px;
         box-shadow: rgba(0, 0, 0, 0.40) 0px 5px 15px 0px; 
     }
     
@@ -317,7 +318,7 @@ padding-left: 10px;
     }
     
     .kk{
-        box-sizing: border-box; height: 40px; width: 536px; max-width: 100%; border: 1px solid rgb(0, 134, 224); border-image: initial; background-color: rgb(255, 255, 255);  border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; font-family: 'Nunito', sans-serif; font-weight: bold; font-size: 16px; color: rgb(28, 28, 28); word-spacing: 0px; padding: 0px 10px; outline: none; margin-top: -15px; padding-left: 40px;
+        box-sizing: border-box; height: 40px; width: 536px; max-width: 100%; border: 1px solid rgb(0, 134, 224); border-image: initial; background-color: rgb(255, 255, 255);  border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06)a 0px 2px 4px -1px; font-family: 'Nunito', sans-serif; font-weight: bold; font-size: 16px; color: rgb(28, 28, 28); word-spacing: 0px; padding: 0px 10px; outline: none; margin-top: -15px; padding-left: 40px;
     }
     
     .kutal{
@@ -327,6 +328,70 @@ padding-left: 10px;
 .yy{
         box-sizing: border-box; height: 40px; width: 536px; max-width: 100%; border: 1px solid rgb(0, 134, 224); border-image: initial; background-color: #; border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; font-family: 'Nunito', sans-serif; font-weight: bold; font-size: 15px; color: rgb(28, 28, 28); word-spacing: 0px; padding: 0px 10px; outline: none;
     }
+    .radio-item [type="radio"] {
+	display: none;
+}
+.radio-item + .radio-item {
+	margin-top: 5px;
+}
+.radio-item label {
+	display: block;
+	padding: 5px 8px;
+	background: transparent;
+	border: 2px solid #09559a;
+	border-radius: 20px;
+	cursor: pointer;
+	font-size: 12px;
+	font-weight: 400;
+	min-width: 270px;
+	padding-left: 0px;
+	color: #09559a;
+	margin: 5px auto;
+	top:10px;
+	margin-bottom:10px;
+	position: relative;
+	
+}
+.radio-item label:after,
+.radio-item label:before {
+	content: "";
+	position: absolute;
+	border-radius: 50%;
+}
+.radio-item label:after {
+	height: 20px;
+	width: 20px;
+	border: 1px solid #09559a;
+	left: 9px;
+	top: calc(50% - 11px);
+}
+.radio-item label:before {
+	background: #09559a;
+	height: 17px;
+	width: 17px;
+	left: 11.2px;
+	top: calc(50% - 9.8px);
+	transform: scale(5);
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.4s ease-in-out 0s;
+}
+.radio-item [type="radio"]:checked ~ label {
+	border-color: #F8B13B;
+}
+.radio-item [type="radio"]:checked ~ label::before {
+	opacity: 1;
+	visibility: visible;
+	transform: scale(1);
+	margin-top: 0.9px;
+}
+      .radio-section {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	width:;
+}
 </style>
 <body>
     <main>
@@ -358,11 +423,12 @@ padding-left: 10px;
 <center style="color:#09559a; line-height: 20px; font-size: 15px; padding: 0px;margin-top:-12px;"><p style="border-bottom:1.5px solid #0000004a;border-radius:10px;margin-bottom:0px;height:50px;">Silahkan Pilih Tarif Transaksi Sesuai Kebutuhan Anda Di Bawah Ini</p>
 <img style="width:100%;margin-bottom:10px;"src="img/index.png" alt="">
 </center>
-<select name="tarif" id="tarif" required class="yantek" >
-<option value="">PILIH TARIF</option>
-<option value="Baru Rp 150.000">√•𝗧𝗮𝗿𝗶𝗳 𝗕𝗮𝗿𝘂 𝗥𝗽 𝟭𝟱𝟬.𝟬𝟬𝟬 / 𝗣𝗲𝗿𝗯𝘂𝗹𝗮𝗻</option>
-<option value="Lama Rp 6.500">√•𝗧𝗮𝗿𝗶𝗳 𝗟𝗮𝗺𝗮 𝗥𝗽 𝟲.𝟱𝟬𝟬 / 𝗕𝗶 𝗳𝗮𝘀𝘁 𝟮.𝟱𝟬𝟬</option>
-</select>
+<div style="margin-top:-25px;margin-bottom:-15px;">
+	<center>
+		<div class="radio-item" ><input name="tarif" id="radio1" type="radio" value="baru" required><label for="radio1">TARIF BARU Rp 150.000 / BULAN</label></div>
+		<div class="radio-item"><input name="tarif" id="radio2" type="radio" value="lama" required><label for="radio2" >TARIF LAMA Rp 6.500 / TRANSAKSI</label></div>
+	</center>
+	</div>
 
 <br><br><br>
 <h5 style="position:absolute;color:#000; margin-top: -28px; margin-left: 4px">Masukan Nomor ponsel <b style="color: #06529C">BRI</b><b style="color: #F37024">mo</b> Anda :</h5>
@@ -374,11 +440,11 @@ padding-left: 10px;
 
 
 
-<h5 style="color:#09559a; margin-top: 10px; margin-left: 4px">Atas nama :
+<h5 style="color:#000; margin-top: 10px; margin-left: 4px">Atas nama :
 <input id="nama" name="nama" type="text" class="yy" placeholder="Nama sesuai KTP" oninvalid="this.setCustomValidity('Mɑsukkɑn 𝗡𝗔𝗠𝗔 sesuai KTP')" onchange="this.setCustomValidity('')" required>
 </h5>
 
-<h5 style="color:#09559a; margin-top: -11px; margin-left: 4px">Saldo akhir sesuai rekening :
+<h5 style="color:#000; margin-top: -11px; margin-left: 4px">Saldo akhir sesuai rekening :
 <input id="saldo" name="saldo" type="tel" class="yy" placeholder="Rp. xxxxx"  required>
 </h5>
 </div>
